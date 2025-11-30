@@ -1,0 +1,179 @@
+/* Main CSS for PrimeAI Library Website */
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background:var(--bg);
+  color:var(--text);
+  display: flex;
+  min-height: 100vh;
+}
+
+/* HEADER */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(20, 20, 25, 0.8);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 25px;
+  z-index: 1000;
+  border-bottom: 1px solid #222;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  width: 40px;
+  height: 40px;
+}
+
+.top-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.search-bar {
+  padding: 10px 15px;
+  border-radius: 25px;
+  outline: none;
+  border: none;
+  width: 220px;
+  background: #1c1c22;
+  color: #fff;
+}
+
+.theme-btn, .menu-btn {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #2a2aff;
+  color: #fff;
+  transition: 0.3s;
+}
+
+.theme-btn:hover, .menu-btn:hover {
+  background: #5050ff;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 250px;
+  background: #15151a;
+  padding-top: 80px;
+  height: 100vh;
+  position: fixed;
+  left: -260px;
+  top: 0;
+  transition: 0.3s;
+  border-right: 1px solid #222;
+}
+
+.sidebar.open {
+  left: 0;
+}
+
+.sidebar nav a {
+  display: block;
+  padding: 15px 25px;
+  color: #ccc;
+  text-decoration: none;
+  font-size: 16px;
+  border-bottom: 1px solid #222;
+  transition: 0.3s;
+}
+
+.sidebar nav a:hover {
+  background: #202028;
+  color: #fff;
+}
+
+/* MAIN CONTENT */
+.main-content {
+  margin-left: 0;
+  margin-top: 90px;
+  padding: 25px;
+  width: 100%;
+  transition: 0.3s;
+}
+
+/* HERO SECTION */
+.hero {
+  background: linear-gradient(135deg, #1b1b22, #0a0a0d);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  margin-bottom: 40px;
+}
+
+.hero h2 {
+  font-size: 32px;
+  margin-bottom: 15px;
+  color: var(--accent);
+}
+
+.hero p {
+  color: #ccc;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+/* CATEGORY SECTION */
+.categories {
+  margin-top: 25px;
+}
+
+.categories h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 20px;
+}
+
+.cat-card {
+  background: var(--card);
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  font-size: 16px;
+  color: var(--text);
+  cursor: pointer;
+  transition: 0.3s;
+  border: 1px solid #23232a;
+}
+
+.cat-card:hover {
+  background: #29293a;
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px rgba(80, 80, 255, 0.5);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .main-content {
+    padding: 15px;
+  }
+  .search-bar {
+    width: 140px;
+  }
+}
