@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>PrimeAI Library</title>
+  <link rel="stylesheet" href="Style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="top-actions">
+      <input id="searchInput" type="text" placeholder="Search AI tools..." class="search-bar" />
+      <button id="menuBtn" class="menu-btn" aria-label="Open menu">☰</button>
+    </div>
+  </header>
+
+  <!-- SIDEBAR -->
+  <aside id="sidebar" class="sidebar" aria-hidden="true">
+    <nav>
+      <a href="index.html" class="nav-link">Home</a>
+      <!-- changed to button so JS can scroll to categories on the same page -->
+      <button id="openCategories" class="nav-link btn-link">AI categories</button>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+      <a href="privacy.html" class="nav-link" >privacy policy </a>
+    </nav>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main-content">
+    <div class="logo">
+      <img src="primeai-logo.png" alt="PrimeAI Library Logo" />
+      <h1>PrimeAI Library</h1>
+    </div>
+
+    <section class="hero">
+      <h2>Discover the Best AI Tools in One Place</h2>
+      <p>
+        Our AI directory brings together the best tools across multiple categories—productivity, design,
+        coding, marketing, automation and more. Har tool ko carefully verify karke add kiya gaya hai, taki
+        users bina time waste kiye apni need ke hisab se perfect AI pick kar sake. Fast, updated, and easy to explore.
+      </p>
+    </section>
+
+    <!-- Popular categories preview -->
+    <!--<section class="categories">
+      <h3>Popular AI Categories</h3>
+      <div class="category-grid">
+        <div class="cat-card">Image Generator</div>
+        <div class="cat-card">Video Generator</div>
+        <div class="cat-card">Voice Generator</div>
+        <div class="cat-card">Chatbots</div>
+        <div class="cat-card">Coding AI</div>
+        <div class="cat-card">Students AI</div>
+        <div class="cat-card">Business AI</div>
+        <div class="cat-card">Free AI Tools</div>
+      </div>
+    </section> -->
+
+    <!-- Full categories + buttons area (target for sidebar button) -->
+    <section id="categoriesSection" class="categories-block">
+      <h2 class="section-title">AI Categories</h2>
+
+      <!-- Body category buttons (these open tool lists below) -->
+      <div class="categories-buttons">
+        <button class="cat-btn" data-category="image">Image Generators</button>
+        <button class="cat-btn" data-category="video">Video Generators</button>
+        <button class="cat-btn" data-category="audio">Audio / Voice AI</button>
+        <button class="cat-btn" data-category="chatbot">Chatbot AI</button>
+        <button class="cat-btn" data-category="code">Code Generators</button>
+        <button class="cat-btn" data-category= "productivity">productivity & automation AI</button>
+        <button class="cat-btn" data-category ="writing">content writesonic & copywriting</button>
+        <button class="cat-btn" data-category="photoedit">photo editing & enhancement AI</button>
+        <button class="cat-btn" data-category="videoedit">Video editing AI</button>
+        <button class="cat-btn" data-category="Research"> Research & data analysis AI</button>
+        <button class="cat-btn" data-category="learning"> Education & learning AI</button>
+        <button class="cat-btn" data-category="Business">Business & marketing AI</button>
+        <button class="cat-btn" data-category="Animation" > Animation & 3D modeling AI</button>
+        <button class="cat-btn" data-category="music">music creation & Beat making AI</button>
+        <button class="cat-btn" data-category="cybersecurity"> cybersecurity & privacy AI</button>
+        <button class="cat-btn" data-category="health">Health & fitness AI</button>
+      </div>
+
+      <!-- TOOL LISTS (hidden by default) -->
+      <div id="imageTools" class="tools-list hidden">
+        <a href="https://www.fotor.com/" target="_blank" class="tool-link">Fotor</a><br>
+
+        <a href="https://pixeldojo.ai/" target="_blank" class="tool-link">Pixel Dojo</a><br>
+
+        <a href="https://typli.ai/" target="_blank" class="tool-link">Typli.ai</a><br>
+
+        <a href="https://insmind.ai/" target="_blank" class="tool-link">insMind</a><br>
+
+        <a href="https://cloudinary.com/" target="_blank" class="tool-link">Cloudairy</a><br>
+
+        <a href="https://copyrocket.ai/" target="_blank" class="tool-link">CopyRocket</a><br>
+        
+        <a href="https://runwayml.com/flux" target="_blank" class="tool-link">FLUX</a><br>
+
+        <a href="https://lexica.art/" target="_blank" class="tool-link">Lexica</a><br>
+
+        <a href="https://www.bing.com/images/create" target="_blank" class="tool-link">Bing Image Creator</a><br>
+
+        <a href="https://playgroundai.com/" target="_blank" class="tool-link">Playground AI</a><br>
+
+        <a href="https://leonardo.ai/" target="_blank" class="tool-link">Leonardo AI</a><br>
+
+        <a href="https://www.craiyon.com/" target="_blank" class="tool-link">Craiyon</a><br>
+
+        <a href="https://creator.nightcafe.studio/" target="_blank" class="tool-link">NightCafe</a><br>
+
+        <a href="https://pixlr.com/" target="_blank" class="tool-link">Pixlr</a><br>
+
+        <a href="https://letsenhance.io/" target="_blank" class="tool-link">Let's Enhance</a><br>
+
+        <a href="https://vanceai.com/" target="_blank" class="tool-link">VanceAI</a><br>
+
+        <a href="https://icons8.com/" target="_blank" class="tool-link">Icons8</a><br>
+      </div>
+
+      <div id="videoTools" class="tools-list hidden">
+        <a href="https://www.capcut.com/ai" target="_blank" class="tool-link">CapCut AI</a><br>
+
+        <a href="https://runwayml.com/" target="_blank" class="tool-link">Runway Gen-1</a><br>
+
+        <a href="https://pika.art/" target="_blank" class="tool-link">Pika Labs</a><br>
+
+        <a href="https://invideo.io/" target="_blank" class="tool-link">InVideo (free plan)</a><br>
+
+        <a href="https://www.flexclip.com/" target="_blank" class="tool-link">FlexClip</a><br>
+
+        <a href="https://www.veed.io/" target="_blank" class="tool-link">VEED.io</a><br>
+
+        <a href="https://www.microsoft.com/en-us/microsoft-365/clipchamp" target="_blank" class="tool-link">Clipchamp</a><br>
+
+        <a href="https://www.synthesia.io/" target="_blank" class="tool-link">Synthesia (limited free)</a><br>
+
+        <a href="https://lumalabs.ai/dream-machine" target="_blank" class="tool-link">Luma Dream Machine</a><br>
+
+        <a href="https://www.heygen.com/" target="_blank" class="tool-link">HeyGen</a><br>
+
+        <a href="https://www.rephrase.ai/" target="_blank" class="tool-link">Rephrase.ai</a><br>
+
+        <a href="https://filmora.wondershare.com/ai-features/" target="_blank" class="tool-link">Wondershare Filmora AI</a><br>
+
+        <a href="https://www.kaiber.ai/" target="_blank" class="tool-link">Kaiber AI</a><br>
+
+        <a href="https://designs.ai/tools/video" target="_blank" class="tool-link">Designs.ai Videomaker</a><br>
+
+        <a href="https://www.canva.com/video/" target="_blank" class="tool-link">Canva AI Video</a><br>
+
+        <a href="https://www.opus.pro/clip" target="_blank" class="tool-link">Opus Clip</a><br>
+
+        <a href="https://pictory.ai/" target="_blank" class="tool-link">Pictory AI</a><br>
+
+        <a href="https://animoto.com/" target="_blank" class="tool-link">Animoto</a><br>
+
+        <a href="https://vidnoz.com/" target="_blank" class="tool-link">Vidnoz AI</a><br>
+
+        <a href="https://www.usemunch.com/" target="_blank" class="tool-link">Munch AI</a><br>
+      </div>
+
+      <div id="audioTools" class="tools-list hidden">
+        <a href="https://elevenlabs.io/" target="_blank" class="tool-link">ElevenLabs (free tier)</a><br>
+
+<a href="https://play.ht/" target="_blank" class="tool-link">PlayHT (free plan)</a><br>
+
+<a href="https://uberduck.ai/" target="_blank" class="tool-link">Uberduck</a><br>
+
+<a href="https://fakeyou.com/" target="_blank" class="tool-link">FakeYou</a><br>
+
+<a href="https://voicelab.ai/" target="_blank" class="tool-link">VoiceLab</a><br>
+
+<a href="https://murf.ai/" target="_blank" class="tool-link">Murf AI (free trial)</a><br>
+
+<a href="https://ttsfree.com/" target="_blank" class="tool-link">TTSFree</a><br>
+
+<a href="https://lovo.ai/" target="_blank" class="tool-link">Lovo.ai (free tier)</a><br>
+
+<a href="https://www.resemble.ai/" target="_blank" class="tool-link">Resemble AI (free demos)</a><br>
+
+<a href="https://www.naturalreaders.com/online/" target="_blank" class="tool-link">NaturalReader (free)</a><br>
+
+<a href="https://azure.microsoft.com/en-us/services/cognitive-services/text-to-speech/" target="_blank" class="tool-link">Microsoft Azure TTS</a><br>
+
+<a href="https://cloud.google.com/text-to-speech" target="_blank" class="tool-link">Google Cloud TTS</a><br>
+
+<a href="https://coqui.ai/" target="_blank" class="tool-link">Coqui TTS</a><br>
+
+<a href="https://github.com/suno-ai/bark" target="_blank" class="tool-link">Bark AI</a><br>
+
+<a href="https://replicastudios.com/" target="_blank" class="tool-link">Replica Studios (free trial)</a><br>
+
+<a href="https://eleventone.com/" target="_blank" class="tool-link">ElevenTone</a><br>
+
+<a href="https://speechify.com/" target="_blank" class="tool-link">Speechify (free plan)</a><br>
+
+<a href="https://www.narakeet.com/" target="_blank" class="tool-link">Narakeet (free demo)</a><br>
+
+<a href="https://www.microsoft.com/en-us/microsoft-365/clipchamp" target="_blank" class="tool-link">Clipchamp Voiceover</a><br>
+
+<a href="https://notevibes.com/free-text-to-speech" target="_blank" class="tool-link">Notevibes Free</a><br>
+      </div>
+
+      <div id="chatbotTools" class="tools-list hidden">
+         <a href="https://chat.openai.com/" target="_blank" class="tool-link">ChatGPT Free</a><br>
+
+<a href="https://gemini.google.com/" target="_blank" class="tool-link">Google Gemini Free</a><br>
+
+<a href="https://copilot.microsoft.com/" target="_blank" class="tool-link">Microsoft Copilot</a><br>
+
+<a href="https://www.meta.ai/" target="_blank" class="tool-link">Meta AI</a><br>
+
+<a href="https://claude.ai/" target="_blank" class="tool-link">Claude.ai Free</a><br>
+
+<a href="https://character.ai/" target="_blank" class="tool-link">Character.AI</a><br>
+
+<a href="https://www.perplexity.ai/" target="_blank" class="tool-link">Perplexity AI</a><br>
+
+<a href="https://poe.com/" target="_blank" class="tool-link">Poe (free models)</a><br>
+
+<a href="https://replika.com/" target="_blank" class="tool-link">Replika Free</a><br>
+
+<a href="https://you.com/" target="_blank" class="tool-link">YouChat</a><br>
+
+<a href="https://huggingface.co/chat/" target="_blank" class="tool-link">HuggingChat</a><br>
+
+<a href="https://open-assistant.io/" target="_blank" class="tool-link">OpenAssistant</a><br>
+
+<a href="https://pi.ai/" target="_blank" class="tool-link">Pi AI (Inflection)</a><br>
+
+<a href="https://janitorai.com/" target="_blank" class="tool-link">Janitor AI</a><br>
+
+<a href="https://chai-research.com/" target="_blank" class="tool-link">Chai AI</a><br>
+
+<a href="https://kajiwoto.com/" target="_blank" class="tool-link">Kajiwoto</a><br>
+
+<a href="https://talkai.info/" target="_blank" class="tool-link">TalkAI</a><br>
+
+<a href="https://botify.ai/" target="_blank" class="tool-link">Botify AI</a><br>
+
+<a href="https://writesonic.com/chat" target="_blank" class="tool-link">ChatSonic (free plan)</a><br>
+
+<a href="https://nat.dev/" target="_blank" class="tool-link">Nat.dev (many free models)</a><br>
+      </div>
+
+      <div id="codeTools" class="tools-list hidden">
+        <a href="https://github.com/features/copilot" target="_blank" class="tool-link">GitHub Copilot Free (Student/Trial)</a><br>
+
+<a href="https://ai.google.dev/gemini-code-assist" target="_blank" class="tool-link">Google Gemini Code Assist (free tier)</a><br>
+
+<a href="https://www.cursor.com/" target="_blank" class="tool-link">Cursor AI (free plan)</a><br>
+
+<a href="https://codeium.com/" target="_blank" class="tool-link">Codeium</a><br>
+
+<a href="https://replit.com/site/ghostwriter" target="_blank" class="tool-link">Replit Ghostwriter (free features)</a><br>
+
+<a href="https://aws.amazon.com/codewhisperer/" target="_blank" class="tool-link">Amazon CodeWhisperer Free Tier</a><br>
+
+<a href="https://www.tabnine.com/" target="_blank" class="tool-link">TabNine (free version)</a><br>
+
+<a href="https://github.com/paul-gauthier/aider" target="_blank" class="tool-link">Aider (open-source)</a><br>
+
+<a href="https://continue.dev/" target="_blank" class="tool-link">Continue.dev</a><br>
+
+<a href="https://huggingface.co/models?pipeline_tag=text-generation&search=code" target="_blank" class="tool-link">HuggingFace Code Models</a><br>
+
+<a href="https://github.com/THUDM/CodeGeeX" target="_blank" class="tool-link">CodeGeeX</a><br>
+
+<a href="https://huggingface.co/microsoft/phi-3-mini-4k-instruct" target="_blank" class="tool-link">Phi-3 Code (open)</a><br>
+
+<a href="https://codeium.com/windsurf" target="_blank" class="tool-link">Windsurf Free</a><br>
+
+<a href="https://github.com/KillianLucas/open-interpreter" target="_blank" class="tool-link">OpenInterpreter (open-source)</a><br>
+
+<a href="https://github.com/bigcode-project/starcoder" target="_blank" class="tool-link">StarCoder</a><br>
+
+<a href="https://bigcode-project.github.io/" target="_blank" class="tool-link">BigCode Models</a><br>
+
+<a href="https://www.codota.com/" target="_blank" class="tool-link">Codota Free</a><br>
+
+<a href="https://github.com/ponicode" target="_blank" class="tool-link">Ponicode Unit Test AI (free)</a><br>
+
+<a href="https://jupyter-ai.readthedocs.io/" target="_blank" class="tool-link">Jupyter AI (open-source)</a><br>
+
+<a href="https://sourcery.ai/" target="_blank" class="tool-link">AI Code Reviewer by Sourcery (free)</a><br>
+      </div>
+      <div id="productivityTools" class="tools-list hidden" >
+        <a href="https://www.notion.so/product/ai" target="_blank" class="tool-link">Notion AI (free basic features)</a><br>
+
+<a href="https://zapier.com/ai" target="_blank" class="tool-link">Zapier AI (free tasks)</a><br>
+
+<a href="https://ifttt.com/" target="_blank" class="tool-link">IFTTT</a><br>
+
+<a href="https://trello.com/guide/trello-automation" target="_blank" class="tool-link">Trello + Automation</a><br>
+
+<a href="https://asana.com/product/ai" target="_blank" class="tool-link">Asana AI (free tier)</a><br>
+
+<a href="https://clickup.com/ai" target="_blank" class="tool-link">ClickUp AI (free plan limits)</a><br>
+
+<a href="https://www.taskade.com/ai" target="_blank" class="tool-link">Taskade AI</a><br>
+
+<a href="https://www.airtable.com/product/ai" target="_blank" class="tool-link">Airtable AI (free features)</a><br>
+
+<a href="https://copilot.microsoft.com/" target="_blank" class="tool-link">Microsoft Copilot (free)</a><br>
+
+<a href="https://workspace.google.com/ai" target="_blank" class="tool-link">Google Workspace AI tools (free basic)</a><br>
+
+<a href="https://obsidian.md/plugins" target="_blank" class="tool-link">Obsidian + AI plugins</a><br>
+
+<a href="https://tana.inc/" target="_blank" class="tool-link">Tana AI (free access)</a><br>
+
+<a href="https://evernote.com/" target="_blank" class="tool-link">Evernote AI (free tier)</a><br>
+
+<a href="https://www.usemotion.com/" target="_blank" class="tool-link">Motion AI (free trial)</a><br>
+
+<a href="https://chromewebstore.google.com/detail/automa/infefdjcjgpohjogidkbijbbcbkbdkeo" target="_blank" class="tool-link">Automa Chrome Extension</a><br>
+
+<a href="https://www.bardeen.ai/" target="_blank" class="tool-link">Bardeen AI (free plan)</a><br>
+
+<a href="https://www.make.com/" target="_blank" class="tool-link">Make.com (free automation)</a><br>
+
+<a href="https://flowiseai.com/" target="_blank" class="tool-link">Flowise AI (open-source)</a><br>
+
+<a href="https://zapgpt.net/" target="_blank" class="tool-link">ZapGPT (free)</a><br>
+
+<a href="https://www.superhuman.com/" target="_blank" class="tool-link">Superhuman AI (free trial)</a><br>
+      </div>
+      <div id="writingTools" class="tools-list hidden" >
+        <a href="https://chat.openai.com/" target="_blank" class="tool-link">ChatGPT Free</a><br>
+
+<a href="https://gemini.google.com/" target="_blank" class="tool-link">Google Gemini Free</a><br>
+
+<a href="https://www.copy.ai/" target="_blank" class="tool-link">Copy.ai (free plan)</a><br>
+
+<a href="https://writesonic.com/" target="_blank" class="tool-link">Writesonic (free tier)</a><br>
+
+<a href="https://rytr.me/" target="_blank" class="tool-link">Rytr</a><br>
+
+<a href="https://www.hypotenuse.ai/" target="_blank" class="tool-link">Hypotenuse AI (free trial)</a><br>
+
+<a href="https://quillbot.com/" target="_blank" class="tool-link">QuillBot (free)</a><br>
+
+<a href="https://www.jasper.ai/" target="_blank" class="tool-link">Jasper AI (free trial)</a><br>
+
+<a href="https://simplified.com/ai/writer" target="_blank" class="tool-link">Simplified AI Writer</a><br>
+
+<a href="https://anyword.com/" target="_blank" class="tool-link">Anyword (free plan)</a><br>
+
+<a href="https://www.notion.so/product/ai" target="_blank" class="tool-link">Notion AI (basic free)</a><br>
+
+<a href="https://copysmith.ai/" target="_blank" class="tool-link">CopySmith (free trial)</a><br>
+
+<a href="https://inkforall.com/" target="_blank" class="tool-link">INK AI Writer (free version)</a><br>
+
+<a href="https://www.peppertype.ai/" target="_blank" class="tool-link">Peppertype AI (free trial)</a><br>
+
+<a href="https://wordhero.co/" target="_blank" class="tool-link">WordHero (free trial)</a><br>
+
+<a href="https://www.scalenut.com/" target="_blank" class="tool-link">Scalenut (free tier)</a><br>
+
+<a href="https://contentbot.ai/" target="_blank" class="tool-link">ContentBot AI (free tier)</a><br>
+
+<a href="https://toolbaz.com/ai-writer" target="_blank" class="tool-link">ToolBaz AI Writer</a><br>
+
+<a href="https://www.writecream.com/" target="_blank" class="tool-link">Writecream (free credits)</a><br>
+
+<a href="https://texta.ai/" target="_blank" class="tool-link">Texta.ai (free trial)</a><br>
+      </div>
+      <div id="photoeditTools" class="tools-list hidden">
+        <a href="https://pixlr.com/" target="_blank" class="tool-link">Pixlr</a><br>
+
+<a href="https://www.fotor.com/" target="_blank" class="tool-link">Fotor</a><br>
+
+<a href="https://letsenhance.io/" target="_blank" class="tool-link">Let’s Enhance (free credits)</a><br>
+
+<a href="https://vanceai.com/" target="_blank" class="tool-link">VanceAI (free tier)</a><br>
+
+<a href="https://www.remini.ai/" target="_blank" class="tool-link">Remini Web (free version)</a><br>
+
+<a href="https://www.canva.com/photo-editor/" target="_blank" class="tool-link">Canva Photo Enhancer</a><br>
+
+<a href="https://www.adobe.com/express/" target="_blank" class="tool-link">Adobe Express AI</a><br>
+
+<a href="https://www.photoroom.com/" target="_blank" class="tool-link">PhotoRoom (free basic)</a><br>
+
+<a href="https://cleanup.pictures/" target="_blank" class="tool-link">Cleanup.pictures (free)</a><br>
+
+<a href="https://enhance.io/" target="_blank" class="tool-link">Enhance.io</a><br>
+
+<a href="https://skylum.com/luminar-neo" target="_blank" class="tool-link">Luminar Neo (free trial)</a><br>
+
+<a href="https://www.upscale.media/" target="_blank" class="tool-link">Upscale.media</a><br>
+
+<a href="https://www.remove.bg/" target="_blank" class="tool-link">Remove.bg (free previews)</a><br>
+
+<a href="https://www.cutout.pro/" target="_blank" class="tool-link">Cutout.pro (free features)</a><br>
+
+<a href="https://www.face26.com/" target="_blank" class="tool-link">Face26 (free plan)</a><br>
+
+<a href="https://www.gimp.org/" target="_blank" class="tool-link">GIMP + AI Plugins</a><br>
+
+<a href="https://krita.org/" target="_blank" class="tool-link">Krita + AI Add-ons</a><br>
+
+<a href="https://picsart.com/" target="_blank" class="tool-link">PicsArt AI Tools</a><br>
+
+<a href="https://snapseed.online/" target="_blank" class="tool-link">Snapseed (Google)</a><br>
+
+<a href="https://photoscape.org/ps/main/index.php" target="_blank" class="tool-link">PhotoScape X (free)</a><br>
+      </div>
+      <div id="videoeditTools" class="tools-list hidden">
+        <a href="https://www.capcut.com/ai" target="_blank" class="tool-link">CapCut AI</a><br>
+
+<a href="https://www.veed.io/" target="_blank" class="tool-link">VEED.io (free plan)</a><br>
+
+<a href="https://www.microsoft.com/en-us/microsoft-365/clipchamp" target="_blank" class="tool-link">Clipchamp</a><br>
+
+<a href="https://www.canva.com/video/" target="_blank" class="tool-link">Canva AI Video Editor</a><br>
+
+<a href="https://invideo.io/" target="_blank" class="tool-link">InVideo Free</a><br>
+
+<a href="https://www.flexclip.com/" target="_blank" class="tool-link">FlexClip</a><br>
+
+<a href="https://www.descript.com/" target="_blank" class="tool-link">Descript Free</a><br>
+
+<a href="https://www.blackmagicdesign.com/products/davinciresolve" target="_blank" class="tool-link">DaVinci Resolve (free)</a><br>
+
+<a href="https://fxhome.com/hitfilm-express" target="_blank" class="tool-link">HitFilm Express</a><br>
+
+<a href="https://www.openshot.org/" target="_blank" class="tool-link">OpenShot + AI Plugins</a><br>
+
+<a href="https://shotcut.org/" target="_blank" class="tool-link">Shotcut</a><br>
+
+<a href="https://www.avid.com/media-composer/first" target="_blank" class="tool-link">Avid Media Composer First</a><br>
+
+<a href="https://lwks.com/" target="_blank" class="tool-link">Lightworks Free</a><br>
+
+<a href="https://runwayml.com/" target="_blank" class="tool-link">Runway (free tier)</a><br>
+
+<a href="https://www.opus.pro/clip" target="_blank" class="tool-link">Opus Clip (free plan)</a><br>
+
+<a href="https://filmora.wondershare.com/" target="_blank" class="tool-link">Filmora AI (free features)</a><br>
+
+<a href="https://www.ssemble.com/" target="_blank" class="tool-link">Ssemble AI</a><br>
+
+<a href="https://www.kapwing.com/" target="_blank" class="tool-link">Kapwing Free</a><br>
+
+<a href="https://www.magisto.com/" target="_blank" class="tool-link">Magisto (free basic)</a><br>
+
+<a href="https://www.movavi.com/online-video-editor/" target="_blank" class="tool-link">Movavi Online Editor (free tools)</a><br>
+      </div>
+      <div id="ResearchTools" class="tools-list hidden">
+        <a href="https://chat.openai.com/" target="_blank" class="tool-link">ChatGPT Free</a><br>
+
+<a href="https://gemini.google.com/" target="_blank" class="tool-link">Google Gemini Free</a><br>
+
+<a href="https://www.perplexity.ai/" target="_blank" class="tool-link">Perplexity AI</a><br>
+
+<a href="https://elicit.org/" target="_blank" class="tool-link">Elicit.org</a><br>
+
+<a href="https://scite.ai/" target="_blank" class="tool-link">Scite.ai (free plan)</a><br>
+
+<a href="https://consensus.app/" target="_blank" class="tool-link">Consensus</a><br>
+
+<a href="https://www.semanticscholar.org/" target="_blank" class="tool-link">Semantic Scholar</a><br>
+
+<a href="https://www.connectedpapers.com/" target="_blank" class="tool-link">Connected Papers</a><br>
+
+<a href="https://researchrabbitapp.com/" target="_blank" class="tool-link">Research Rabbit</a><br>
+
+<a href="https://www.litmaps.com/" target="_blank" class="tool-link">Litmaps (free tier)</a><br>
+
+<a href="https://chat.openai.com/?model=gpt-4o#data-analysis" target="_blank" class="tool-link">OpenAI Data Analysis (ChatGPT Free)</a><br>
+
+<a href="https://www.wolframalpha.com/" target="_blank" class="tool-link">Wolfram Alpha (basic free)</a><br>
+
+<a href="https://www.kaggle.com/code" target="_blank" class="tool-link">Kaggle Notebooks</a><br>
+
+<a href="https://www.datarobot.com/platform/trial/" target="_blank" class="tool-link">DataRobot Trial</a><br>
+
+<a href="https://colab.research.google.com/" target="_blank" class="tool-link">Google Colab</a><br>
+
+<a href="https://www.ibm.com/products/watson-studio" target="_blank" class="tool-link">IBM Watson Studio Free</a><br>
+
+<a href="https://public.tableau.com/" target="_blank" class="tool-link">Tableau Public</a><br>
+
+<a href="https://powerbi.microsoft.com/" target="_blank" class="tool-link">Microsoft Power BI (free desktop)</a><br>
+
+<a href="https://flowgpt.com/" target="_blank" class="tool-link">FlowGPT Research Assistant</a><br>
+
+<a href="https://quillbot.com/" target="_blank" class="tool-link">QuillBot Research & Summarizer (free)</a><br>
+      </div>
+      <div id="learningTools" class="tools-list hidden">
+        <a href="https://www.khanacademy.org/khan-labs" target="_blank" class="tool-link">
+Khan Academy – Khanmigo (free basic)
+</a><br>
+
+<a href="https://gemini.google.com/" target="_blank" class="tool-link">
+Google Gemini Free
+</a><br>
+
+<a href="https://chat.openai.com/" target="_blank" class="tool-link">
+ChatGPT Free
+</a><br>
+
+<a href="https://www.duolingo.com/" target="_blank" class="tool-link">
+Duolingo (free)
+</a><br>
+
+<a href="https://www.coursera.org/courses?query=free" target="_blank" class="tool-link">
+Coursera Free Courses
+</a><br>
+
+<a href="https://www.edx.org/" target="_blank" class="tool-link">
+edX Free Courses
+</a><br>
+
+<a href="https://www.udemy.com/courses/free/" target="_blank" class="tool-link">
+Udemy Free Courses
+</a><br>
+
+<a href="https://socratic.org/" target="_blank" class="tool-link">
+Socratic by Google
+</a><br>
+
+<a href="https://photomath.com/" target="_blank" class="tool-link">
+Photomath
+</a><br>
+
+<a href="https://mathsolver.microsoft.com/en" target="_blank" class="tool-link">
+Microsoft Math Solver
+</a><br>
+
+<a href="https://www.wolframalpha.com/" target="_blank" class="tool-link">
+Wolfram Alpha (basic free)
+</a><br>
+
+<a href="https://www.grammarly.com/" target="_blank" class="tool-link">
+Grammarly (free)
+</a><br>
+
+<a href="https://quillbot.com/" target="_blank" class="tool-link">
+QuillBot (free)
+</a><br>
+
+<a href="https://www.reddit.com/r/explainlikeimfive/" target="_blank" class="tool-link">
+ExplainLikeImFive AI
+</a><br>
+
+<a href="https://brainly.in/" target="_blank" class="tool-link">
+Brainly (free)
+</a><br>
+
+<a href="https://quizlet.com/" target="_blank" class="tool-link">
+Quizlet (free)
+</a><br>
+
+<a href="https://openstax.org/" target="_blank" class="tool-link">
+OpenStax
+</a><br>
+
+<a href="https://ed.ted.com/" target="_blank" class="tool-link">
+TED-Ed
+</a><br>
+
+<a href="https://brilliant.org/" target="_blank" class="tool-link">
+Brilliant (free daily lessons)
+</a><br>
+
+<a href="https://studycrumb.com/" target="_blank" class="tool-link">
+StudyCrumb AI
+</a><br>
+
+<a href="https://www.perplexity.ai/" target="_blank" class="tool-link">
+Perplexity AI
+</a><br>
+
+<a href="https://elicit.org/" target="_blank" class="tool-link">
+Elicit (free)
+</a><br>
+
+<a href="https://summarizebot.com/" target="_blank" class="tool-link">
+SummarizeBot AI
+</a><br>
+
+<a href="https://scribehow.com/" target="_blank" class="tool-link">
+Scribe AI
+</a><br>
+
+<a href="https://www.lingq.com/en/" target="_blank" class="tool-link">
+LingQ (free version)
+</a><br>
+      </div>
+      <div id="BusinessTools" class="tools-list hidden">
+        <a href="https://www.hubspot.com/products/marketing" target="_blank" class="tool-link">
+HubSpot Marketing Hub Free
+</a><br>
+
+<a href="https://mailchimp.com/" target="_blank" class="tool-link">
+Mailchimp Free
+</a><br>
+
+<a href="https://www.canva.com/" target="_blank" class="tool-link">
+Canva AI Marketing Tools
+</a><br>
+
+<a href="https://buffer.com/" target="_blank" class="tool-link">
+Buffer (free plan)
+</a><br>
+
+<a href="https://www.hootsuite.com/" target="_blank" class="tool-link">
+Hootsuite Free Tools
+</a><br>
+
+<a href="https://www.zoho.com/social/" target="_blank" class="tool-link">
+Zoho Social (free tier)
+</a><br>
+
+<a href="https://metricool.com/" target="_blank" class="tool-link">
+Metricool (free plan)
+</a><br>
+
+<a href="https://analytics.google.com/" target="_blank" class="tool-link">
+Google Analytics
+</a><br>
+
+<a href="https://ads.google.com/home/tools/keyword-planner/" target="_blank" class="tool-link">
+Google Ads Keyword Planner
+</a><br>
+
+<a href="https://neilpatel.com/ubersuggest/" target="_blank" class="tool-link">
+Ubersuggest (free tier)
+</a><br>
+
+<a href="https://www.scalenut.com/" target="_blank" class="tool-link">
+Scalenut (free features)
+</a><br>
+
+<a href="https://www.copy.ai/" target="_blank" class="tool-link">
+Copy.ai (free plan)
+</a><br>
+
+<a href="https://writesonic.com/" target="_blank" class="tool-link">
+Writesonic (free tier)
+</a><br>
+
+<a href="https://www.notion.so/product/ai" target="_blank" class="tool-link">
+Notion AI (basic free)
+</a><br>
+
+<a href="https://trello.com/guide/trello-automation" target="_blank" class="tool-link">
+Trello + AI
+</a><br>
+
+<a href="https://apify.com/" target="_blank" class="tool-link">
+Apify (free automation)
+</a><br>
+
+<a href="https://www.bardeen.ai/" target="_blank" class="tool-link">
+Bardeen AI (free plan)
+</a><br>
+
+<a href="https://pictory.ai/" target="_blank" class="tool-link">
+Pictory AI (free credits)
+</a><br>
+
+<a href="https://lumen5.com/" target="_blank" class="tool-link">
+Lumen5 (free plan)
+</a><br>
+
+<a href="https://creaitor.ai/" target="_blank" class="tool-link">
+Creaitor AI (free tier)
+</a><br>
+      </div>
+      <div id="AnimationTools" class="tools-list hidden">
+        <a href="https://cascadeur.com/" target="_blank" class="tool-link">
+Cascadeur Free
+</a><br>
+
+<a href="https://krita.org/en/features/animation/" target="_blank" class="tool-link">
+Krita Animation
+</a><br>
+
+<a href="https://www.blender.org/" target="_blank" class="tool-link">
+Blender (AI Plugins Supported)
+</a><br>
+
+<a href="https://www.animaker.com/" target="_blank" class="tool-link">
+Animaker Free
+</a><br>
+
+<a href="https://www.renderforest.com/" target="_blank" class="tool-link">
+Renderforest Free
+</a><br>
+
+<a href="https://www.powtoon.com/" target="_blank" class="tool-link">
+Powtoon Free
+</a><br>
+
+<a href="https://opentoonz.github.io/e/" target="_blank" class="tool-link">
+OpenToonz
+</a><br>
+
+<a href="https://www.pencil2d.org/" target="_blank" class="tool-link">
+Pencil2D
+</a><br>
+
+<a href="https://www.synfig.org/" target="_blank" class="tool-link">
+Synfig Studio
+</a><br>
+
+<a href="https://ebsynth.com/" target="_blank" class="tool-link">
+EbSynth (AI Motion Transfer)
+</a><br>
+<a href="https://www.blender.org/" target="_blank" class="tool-link">
+Blender
+</a><br>
+
+<a href="https://www.sketchup.com/plans-and-pricing/sketchup-free" target="_blank" class="tool-link">
+SketchUp Free
+</a><br>
+
+<a href="https://womp.com/" target="_blank" class="tool-link">
+Womp 3D
+</a><br>
+
+<a href="https://www.blockbench.net/" target="_blank" class="tool-link">
+Blockbench
+</a><br>
+
+<a href="https://www.makehumancommunity.org/" target="_blank" class="tool-link">
+MakeHuman
+</a><br>
+
+<a href="https://alicevision.org/#meshroom" target="_blank" class="tool-link">
+Meshroom (AI Photogrammetry)
+</a><br>
+
+<a href="https://openscad.org/" target="_blank" class="tool-link">
+OpenSCAD
+</a><br>
+
+<a href="http://www.wings3d.com/" target="_blank" class="tool-link">
+Wings 3D
+</a><br>
+
+<a href="https://stephaneginier.com/sculptgl/" target="_blank" class="tool-link">
+SculptGL
+</a><br>
+
+<a href="https://clara.io/" target="_blank" class="tool-link">
+Clara.io
+</a><br>
+      </div>
+      <div id="musicTools" class="tools-list hidden">
+        <a href="https://soundful.com/" target="_blank" class="tool-link">
+Soundful (free beats)
+</a><br>
+
+<a href="https://www.beatoven.ai/" target="_blank" class="tool-link">
+Beatoven.ai
+</a><br>
+
+<a href="https://boomy.com/" target="_blank" class="tool-link">
+Boomy
+</a><br>
+
+<a href="https://www.aiva.ai/" target="_blank" class="tool-link">
+AIVA (free tier)
+</a><br>
+
+<a href="https://soundraw.io/" target="_blank" class="tool-link">
+Soundraw (free trial)
+</a><br>
+
+<a href="https://mubert.com/" target="_blank" class="tool-link">
+Mubert (free personal use)
+</a><br>
+
+<a href="https://loudly.com/ai-music" target="_blank" class="tool-link">
+Loudly AI Music
+</a><br>
+
+<a href="https://www.tracktion.com/products/waveform-free" target="_blank" class="tool-link">
+Tracktion Waveform Free
+</a><br>
+
+<a href="https://magenta.tensorflow.org/studio" target="_blank" class="tool-link">
+Magenta Studio (Google)
+</a><br>
+
+<a href="https://www.ampermusic.com/" target="_blank" class="tool-link">
+Amper Music (basic free)
+</a><br>
+
+<a href="https://www.bandlab.com/" target="_blank" class="tool-link">
+BandLab
+</a><br>
+
+<a href="https://www.audiotool.com/" target="_blank" class="tool-link">
+Audiotool
+</a><br>
+
+<a href="https://www.splashmusic.com/" target="_blank" class="tool-link">
+Splash Music
+</a><br>
+
+<a href="https://www.humtap.com/" target="_blank" class="tool-link">
+Humtap
+</a><br>
+
+<a href="https://lmms.io/" target="_blank" class="tool-link">
+LMMS (AI plugins support)
+</a><br>
+
+<a href="https://github.com/openai/jukebox" target="_blank" class="tool-link">
+Jukebox AI (OpenAI — Community Tools)
+</a><br>
+
+<a href="https://ecrettmusic.com/" target="_blank" class="tool-link">
+Ecrett Music (free trial)
+</a><br>
+
+<a href="https://melobytes.com/en" target="_blank" class="tool-link">
+Melobytes
+</a><br>
+
+<a href="https://drumloop.ai/" target="_blank" class="tool-link">
+Drumloop AI
+</a><br>
+
+<a href="https://tuneflow.com/" target="_blank" class="tool-link">
+TuneFlow AI
+</a><br>
+      </div>
+      <div id="cybersecurityTools" class="tools-list hidden">
+        <a href="https://www.virustotal.com/" target="_blank" class="tool-link">VirusTotal</a><br>
+
+<a href="https://www.shodan.io/" target="_blank" class="tool-link">Shodan (free tier)</a><br>
+
+<a href="https://haveibeenpwned.com/" target="_blank" class="tool-link">HaveIBeenPwned</a><br>
+
+<a href="https://bazaar.abuse.ch/" target="_blank" class="tool-link">MalwareBazaar</a><br>
+
+<a href="https://securitytrails.com/" target="_blank" class="tool-link">SecurityTrails (free plan)</a><br>
+
+<a href="https://www.abuseipdb.com/" target="_blank" class="tool-link">AbuseIPDB</a><br>
+
+<a href="https://cuckoosandbox.org/" target="_blank" class="tool-link">Cuckoo Sandbox</a><br>
+
+<a href="https://www.wireshark.org/" target="_blank" class="tool-link">Wireshark (AI-assisted plugins)</a><br>
+
+<a href="https://www.opencit.io/" target="_blank" class="tool-link">OpenCTI</a><br>
+
+<a href="https://wazuh.com/" target="_blank" class="tool-link">Wazuh (SIEM + AI rules)</a><br>
+
+<a href="https://falco.org/" target="_blank" class="tool-link">Falco (runtime security)</a><br>
+
+<a href="https://www.metasploit.com/" target="_blank" class="tool-link">Metasploit Framework</a><br>
+
+<a href="https://nmap.org/" target="_blank" class="tool-link">Nmap (AI scripts available)</a><br>
+
+<a href="https://osintframework.com/" target="_blank" class="tool-link">OSINT Framework</a><br>
+
+<a href="https://thehive-project.org/" target="_blank" class="tool-link">TheHive Project</a><br>
+
+<a href="https://www.misp-project.org/" target="_blank" class="tool-link">MISP (Threat Intelligence)</a><br>
+
+<a href="https://www.clamav.net/" target="_blank" class="tool-link">ClamAV</a><br>
+
+<a href="https://github.com/Yara-Rules/" target="_blank" class="tool-link">YARA Rules AI Generators</a><br>
+
+<a href="https://github.com/TheHive-Project/Cortex-Analyzers" target="_blank" class="tool-link">Cortex Analyzer (free)</a><br>
+
+<a href="https://gchq.github.io/CyberChef/" target="_blank" class="tool-link">CyberChef</a><br>
+      </div>
+      <div id="healthTools" class="tools-list hidden">
+        <a href="https://www.google.com/fit/" target="_blank" class="tool-link">Google Fit</a><br>
+
+<a href="https://www.samsung.com/global/galaxy/apps/samsung-health/" target="_blank" class="tool-link">Samsung Health</a><br>
+
+<a href="https://www.myfitnesspal.com/" target="_blank" class="tool-link">MyFitnessPal (free version)</a><br>
+
+<a href="https://fitonapp.com/" target="_blank" class="tool-link">FitOn</a><br>
+
+<a href="https://www.nike.com/ntc-app" target="_blank" class="tool-link">Nike Training Club</a><br>
+
+<a href="https://www.caloriemama.ai/" target="_blank" class="tool-link">Calorie Mama AI</a><br>
+
+<a href="https://www.lifesum.com/" target="_blank" class="tool-link">Lifesum (free tier)</a><br>
+
+<a href="https://www.strava.com/" target="_blank" class="tool-link">Strava (free features)</a><br>
+
+<a href="https://www.sleepcycle.com/" target="_blank" class="tool-link">Sleep Cycle (free)</a><br>
+
+<a href="https://healthy.io/" target="_blank" class="tool-link">Healthy.io (AI urine test – demo)</a><br>
+
+<a href="https://www.wysa.io/" target="_blank" class="tool-link">Wysa (AI mental wellness)</a><br>
+
+<a href="https://www.youper.ai/" target="_blank" class="tool-link">Youper AI</a><br>
+
+<a href="https://welltory.com/" target="_blank" class="tool-link">Welltory (free tier)</a><br>
+
+<a href="https://www.pacer.cc/" target="_blank" class="tool-link">Pacer App</a><br>
+
+<a href="https://fitbod.me/" target="_blank" class="tool-link">Fitbod (free trial)</a><br>
+
+<a href="https://watchful.ai/" target="_blank" class="tool-link">Watchful AI Health Monitor</a><br>
+
+<a href="https://ada.com/" target="_blank" class="tool-link">Ada Health (AI symptom checker)</a><br>
+
+<a href="https://www.babylonhealth.com/" target="_blank" class="tool-link">Babylon AI Health (free tier)</a><br>
+
+<a href="https://symptomate.com/" target="_blank" class="tool-link">Symptomate AI</a><br>
+
+<a href="https://www.calm.com/" target="_blank" class="tool-link">Calm AI (free features)</a><br>
+      </div>
+    </section>
+ <img src="trustbuild.jpg" alt="300+ AI " height="175"/>
+ <p><i>All AI tools listed here are checked, updated, and reliable so you can explore confidently and save time.</i></p>
+
+  </main>
+  <!-- FOOTER SECTION -->
+<footer class="footer">
+    <div class="footer-content">
+        <h2 class="footer-logo">PrimeAI Library</h2>
+        <p class="footer-desc">
+            Discover the best AI tools from all categories — fast, simple and always updated.
+        </p>
+
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="privacy.html">Privacy Policy</a>
+        </div>
+
+        <p class="footer-copy">© 2025 PrimeAI Library — All Rights Reserved.</p>
+    </div>
+  
+</footer>
+
+  <script src="Script.js"></script>
+</body>
+</html>
