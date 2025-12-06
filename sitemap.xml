@@ -1,35 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <url>
-    <loc>https://primeailibrary.github.io/</loc>
-    <priority>1.0</priority>
-    <changefreq>daily</changefreq>
-  </url>
+<url>
+  <loc>https://primeailibrary.github.io/PrimeAI-library-/</loc>
+</url>
 
-  <url>
-    <loc>https://primeailibrary.github.io/about.html</loc>
-    <priority>0.9</priority>
-    <changefreq>monthly</changefreq>
-  </url>
+<url>
+  <loc>https://primeailibrary.github.io/PrimeAI-library-/about.html</loc>
+</url>
 
-  <url>
-    <loc>https://primeailibrary.github.io/contact.html</loc>
-    <priority>0.9</priority>
-    <changefreq>monthly</changefreq>
-  </url>
+<url>
+  <loc>https://primeailibrary.github.io/PrimeAI-library-/privacy.html</loc>
+</url>
 
-  <url>
-    <loc>https://primeailibrary.github.io/privacy.html</loc>
-    <priority>0.8</priority>
-    <changefreq>yearly</changefreq>
-  </url>
-
-  <!-- AI categories (if you create separate pages later, add here too) -->
-  <url>
-    <loc>https://primeailibrary.github.io/index.html#categories</loc>
-    <priority>0.7</priority>
-    <changefreq>weekly</changefreq>
-  </url>
+<url>
+  <loc>https://primeailibrary.github.io/PrimeAI-library-/contact.html</loc>
+</url>
 
 </urlset>
