@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+
+# Block unnecessary files from being indexed
+Disallow: /Style.css
+Disallow: /themes.css
+Disallow: /script.js
+Disallow: /images/
+
+# Allow important pages
+Allow: /about.html
+Allow: /contact.html
+Allow: /privacy.html
+Allow: /index.html
+
+# Sitemap for Google (very important)
+Sitemap: https://primeailibrary.github.io/sitemap.xml
